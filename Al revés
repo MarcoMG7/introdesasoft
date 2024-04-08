@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+    int num;
+    int digito_invertido;
+    int contador_cifras = 0;
+
+    printf("Introduzca un número de 4 cifras: ");
+    scanf("%d", &num);
+
+    // Validamos que el número tenga exactamente 4 cifras
+    int numero_temporal = num;
+    while (numero_temporal != 0) {
+        contador_cifras++;
+        numero_temporal = numero_temporal / 10;
+    }
+
+    if (contador_cifras != 4) {
+        printf("El número debe tener exactamente 4 cifras. Inténtalo de nuevo.\n");
+        return 1; // Salimos del programa con un código de error
+    }
+
+    printf("\nNúmero invertido: ");
+    while (num != 0) {
+        digito_invertido = num % 10;
+        printf("%d", digito_invertido);
+        num = num / 10;
+    }
+    return 0;
+}
